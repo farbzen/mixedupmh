@@ -17,7 +17,6 @@ pub struct Weapon {
 pub async fn load_weapons() -> Weapons {
     let path = current_dir()
         .unwrap()
-        .join(super::PATH_RESOURCE_FILES)
         .join(super::PATH_JSON_FILES)
         .join(PATH_WEAPON_FILE);
 

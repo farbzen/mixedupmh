@@ -20,7 +20,6 @@ pub struct Monster {
 pub async fn load_monsters() -> Monsters {
     let path = current_dir()
         .unwrap()
-        .join(super::PATH_RESOURCE_FILES)
         .join(super::PATH_JSON_FILES)
         .join(PATH_MONSTER_FILE);
 

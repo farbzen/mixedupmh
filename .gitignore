@@ -24,8 +24,10 @@ tailwind.config.ts
 
 # Rust
 /target
-askama.toml
 rustfmt.toml
+templates
+static
+json
 
 # Allow
 !/.build/**/*

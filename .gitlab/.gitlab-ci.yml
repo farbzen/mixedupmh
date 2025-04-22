@@ -1,0 +1,22 @@
+stages:
+  - build
+
+dev_build:
+  stage: build 
+  image: rust:1.86.0-bookworm
+  needs: []
+  before_script:
+    - apt update
+    - apt install -y zip
+  script:
+    - cp -r res/* .
+    - cargo build --release
+    - cp target/release/mumh .
+    - zip mumh static/ json/ templates/ mumh.zip
+  artifacts:
+    when: always
+    expire_in: "1 hour"
+    paths:
+      - "mumh.zip"
+  only:
+    - dev

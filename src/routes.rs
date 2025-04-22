@@ -1,9 +1,5 @@
-use crate::{
-    data::PATH_RESOURCE_FILES,
-    handlers::{
-        actions::route_actions, components::route_components,
-        pages::route_pages,
-    },
+use crate::handlers::{
+    actions::route_actions, components::route_components, pages::route_pages,
 };
 use axum::Router;
 use tower::ServiceBuilder;
@@ -18,10 +14,7 @@ pub fn build_router() -> Router {
         .with_max_level(tracing::Level::DEBUG)
         .init();
 
-    let static_path = std::env::current_dir()
-        .unwrap()
-        .join(PATH_RESOURCE_FILES)
-        .join(PATH_STATIC_FILES);
+    let static_path = std::env::current_dir().unwrap().join(PATH_STATIC_FILES);
 
     Router::new()
         .nest_service(ROUTE_ASSETS, ServeDir::new(static_path))

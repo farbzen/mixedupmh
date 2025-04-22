@@ -27,7 +27,6 @@ pub async fn language_dictionary(cookies: &Cookies) -> LanguageDictionary {
 
     let path = current_dir()
         .unwrap()
-        .join(super::PATH_RESOURCE_FILES)
         .join(super::PATH_JSON_FILES)
         .join(PATH_LANGUAGE_FILES)
         .join(language.to_owned() + ".json");
