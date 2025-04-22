@@ -1,7 +1,7 @@
 stages:
   - build
 
-dev_build:
+build_dev:
   stage: build 
   image: rust:1.86.0-bookworm
   needs: []
@@ -17,6 +17,6 @@ dev_build:
     when: always
     expire_in: "1 hour"
     paths:
-      - "mumh.zip"
+      - "mumh_dev.zip"
   only:
     - dev
