@@ -10,6 +10,7 @@ build_dev:
   script:
     - cp -r res/* .
     - cargo build --release
+    - cp target/release/mumh .
   artifacts:
     name: "mumh_dev"
     when: always
@@ -18,6 +19,6 @@ build_dev:
       - "templates/"
       - "static/"
       - "json/"
-      - "target/release/mumh"
+      - "mumh"
   only:
     - dev
