@@ -7,16 +7,17 @@ build_dev:
   needs: []
   before_script:
     - apt update
-    - apt install -y zip
   script:
     - cp -r res/* .
     - cargo build --release
-    - cp target/release/mumh .
-    - zip -r mumh_dev.zip static/ json/ templates/ mumh
   artifacts:
+    name: "mumh_dev"
     when: always
     expire_in: "1 hour"
     paths:
-      - "mumh_dev.zip"
+      - "templates/"
+      - "static/"
+      - "json/"
+      - "target/release/mumh"
   only:
     - dev
