@@ -1,0 +1,15 @@
+<div class="size-96 text-3xl content-end p-3 m-5 transition-all bg-contain bg-no-repeat bg-center xl:size-60 xl:text-lg"
+     style="background-image: url('/assets/images/weapons/{{ weapon.name }}.webp')">
+    <div class="bg-gradient-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2 drop-shadow-md"
+         hx-get="/_actions/hunter/rename"
+         hx-trigger="change"
+         hx-swap="none"
+         hx-include="this"
+         hx-vals='{"number": "{{ number }}"}'>
+        <input type="text"
+               name="name"
+               class="bg-transparent h-8 w-full"
+               value="{{ hunter }}" />
+        <p class="whitespace-nowrap drop-shadow-md">{{ lang.get(weapon.name) }}</p>
+    </div>
+</div>

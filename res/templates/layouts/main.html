@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html class="size-full transition-colors overflow-hidden">
+    <head>
+        <title>{{ lang.get("title") }}</title>
+        <meta charset="UTF-8" />
+        <meta name="description" content="A Monster Hunter randomizer, written in Rust." />
+        <meta name="keywords" content="Monster, Hunter, MH, MHW, Wilds, Randomizer, Roulette, Mixed, Up" />
+        <meta name="author" content="Fabian Meier" />
+        <meta name="robots" content="noindex,nofollow" />
+        <link rel="stylesheet" href="/assets/css/main.css" />
+        <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
+        {% include "components/scripts.html" %}
+    </head>
+    <body class="bg-slate-900 text-slate-50 size-full transition-colors overflow-hidden">
+        {% include "components/header.html" %}
+        <div class="my-auto">
+            {% block page %}{% endblock %}
+        </div>
+        {% include "components/footer.html" %}
+        {% include "components/modals/empty.html" %}
+    </body>
+</html>

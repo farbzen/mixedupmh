@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+div[id^="hunter_"].htmx-swapping,
+div[id^="monster"].htmx-swapping {
+  @apply !animate-slideOutLeft;
+}
+
+div[id^="hunter_"].htmx-settling,
+div[id^="monster"].htmx-settling {
+  @apply !animate-slideInRight;
+}
+
+div[id^="modal_"].htmx-swapping {
+  @apply !animate-fadeOut;
+}
+
+div[id^="modal_"].htmx-settling {
+  @apply !animate-fadeIn;
+}

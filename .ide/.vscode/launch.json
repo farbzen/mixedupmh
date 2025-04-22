@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Debug MHW Roulette",
+      "type": "go",
+      "request": "launch",
+      "program": "${workspaceFolder}/src/main.go",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/src/"
+    }
+  ]
+}

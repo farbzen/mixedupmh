@@ -1,0 +1,11 @@
+<div x-data="{ lang: '{{ lang.lang }}' }" hx-swap="outerHTML">
+    <div class="flex absolute top-3 right-3">
+        {% for lang in ["en", "de"] %}
+            <a href="/_actions/language/{{ lang }}">
+                <img src="/assets/images/languages/{{ lang }}.webp"
+                     class="h-5 aspect-auto border-b-2 transition-all m-2"
+                     :class="lang == '{{ lang }}' ? 'border-blue-600' : 'border-transparent'" />
+            </a>
+        {% endfor %}
+    </div>
+</div>

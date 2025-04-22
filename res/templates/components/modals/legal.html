@@ -1,0 +1,33 @@
+<div id="modal_legal"
+     class="absolute top-0 left-0 size-full backdrop-blur-md overflow-x-scroll">
+    <div class="absolute left-1/2 -translate-x-1/2 mt-20 rounded-3xl h-min w-1/2 bg-slate-800 shadow-black shadow-md p-8">
+        <a href="javascript:;"
+           hx-get="/_components/_modals/empty"
+           hx-target="#modal_legal"
+           hx-swap="outerHTML swap:.1s settle:.1s">
+            <img src="/assets/images/close.webp" class="size-4 transition-all ml-auto" />
+        </a>
+        <h1 class="text-center text-3xl font-bold">{{ lang.get("legalnotice") }}</h1>
+        <p class="text-center">{{ lang.get("legal_accordance") }}</p>
+        <br />
+        <img src="/assets/images/{{ lang.get("legal_contact") }}"
+             alt="{{ lang.get("legal_contact_alt") }}"
+             class="border-0" />
+        <br />
+        <h2 class="text-center text-2xl font-bold">{{ lang.get("legal_disclaimer") }}</h2>
+        <br />
+        <h3 class="text-center text-xl font-bold">{{ lang.get("legal_disclaimer_content_headline") }}</h3>
+        <p>{{ lang.get("legal_disclaimer_content_body") }}</p>
+        <br />
+        <h3 class="text-center text-xl font-bold">{{ lang.get("legal_disclaimer_links_headline") }}</h3>
+        <p>{{ lang.get("legal_disclaimer_links_body") }}</p>
+        <br />
+        <h3 class="text-center text-xl font-bold">{{ lang.get("legal_disclaimer_copyright_headline") }}</h3>
+        <p>{{ lang.get("legal_disclaimer_copyright_body") }}</p>
+        <br />
+        <h3 class="text-center text-xl font-bold">{{ lang.get("legal_disclaimer_dataprotection_headline") }}</h3>
+        <p>{{ lang.get("legal_disclaimer_dataprotection_body1") }}</p>
+        <p>{{ lang.get("legal_disclaimer_dataprotection_body2") }}</p>
+        <p>{{ lang.get("legal_disclaimer_dataprotection_body3") }}</p>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+.nvim.lua
+nvim.lua
+.vscode
+.vscode/
+
+__debug_bin*
+
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.nix
+devenv.yaml
+devenv.lock
+.envrc
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
+
+# IDE config for tailwind
+tailwind.config.ts
+
+# Rust
+/target
+askama.toml
+rustfmt.toml
+
+# Allow
+!/.build/**/*
+!/.ide/**/*
+!/tools/**/*
