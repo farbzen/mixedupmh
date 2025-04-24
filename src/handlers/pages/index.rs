@@ -12,6 +12,7 @@ use axum::{
     http::StatusCode,
     response::{Html, IntoResponse},
 };
+use chrono::Datelike;
 use serde::Deserialize;
 use tower_cookies::Cookies;
 
@@ -30,6 +31,7 @@ struct IndexPage {
     monster: String,
     capture: bool,
     temper: String,
+    year: String,
 }
 
 pub async fn index(
@@ -71,6 +73,8 @@ pub async fn index(
     let monster =
         get_cookie_value(&cookies, MONSTERNAME, DEFAULT_MONSTERNAME).await;
 
+    let year = chrono::Utc::now().year().to_string();
+
     let template = IndexPage {
         lang: language_dictionary(&cookies).await,
         hunter_count,
@@ -82,6 +86,7 @@ pub async fn index(
             .parse::<bool>()
             .unwrap_or(false),
         temper: get_cookie_value(&cookies, TEMPER, DEFAULT_TEMPER).await,
+        year,
     };
     let html = template.render().unwrap();
 
