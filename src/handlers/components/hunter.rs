@@ -34,11 +34,7 @@ pub async fn hunter(
     .await;
 
     let weapon = roll_weapon().await;
-    set_cookie(
-        &cookies,
-        &(WEAPONNAME.to_string() + &number),
-        &weapon.name,
-    );
+    set_cookie(&cookies, &(WEAPONNAME.to_string() + &number), &weapon.name);
 
     let template = HunterComponent {
         lang: language_dictionary(&cookies).await,

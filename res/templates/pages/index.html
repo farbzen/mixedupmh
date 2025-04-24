@@ -22,7 +22,7 @@
     </div>
     <div x-data="{ hunterCount: {{ hunter_count }} }">
         <div class="w-full text-3xl xl:text-base my-5 flex justify-center">
-            <select class="bg-slate-950 shadow-black rounded-lg shadow-lg w-64 p-2 mx-2"
+            <select class="bg-slate-950 rounded-lg shadow-lg w-min py-2 px-4 mx-2"
                     x-model.number="hunterCount"
                     name="count"
                     hx-get="/_actions/hunter/count"
@@ -35,9 +35,9 @@
                     </option>
                 {% endfor %}
             </select>
-            <button class="bg-slate-50 shadow-black opacity-70 hover:opacity-90 active:opacity-100 shadow-lg rounded-xl p-2 mx-2"
+            <button class="bg-slate-950 opacity-70 hover:opacity-90 active:opacity-100 rounded-xl p-2 mx-2"
                     id="rollAll">
-                <img class="size-9 invert" src="/assets/images/reload.webp" />
+                <img class="size-9" src="/assets/images/reload.webp" />
             </button>
         </div>
         <div class="flex justify-center">
