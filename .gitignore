@@ -23,11 +23,11 @@ devenv.lock
 tailwind.config.ts
 
 # Rust
-/target
 rustfmt.toml
-templates
-static
-json
+/target
+/templates
+/static
+/json
 
 # Allow
 !/.build/**/*

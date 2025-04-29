@@ -178,7 +178,7 @@
       "name": "rey_dau",
       "capturable": true,
       "tempered": true,
-      "arch_tempered": false
+      "arch_tempered": true 
     },
     {
       "name": "rompopolo",
