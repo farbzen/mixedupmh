@@ -2,8 +2,8 @@ stages:
   - build
 
 build_dev:
-  stage: build 
-  image: rust:1.86.0-bookworm
+  stage: build
+  image: mcr.cloudsupplies.de/library/rust:1.86.0-bookworm
   needs: []
   before_script:
     - apt update

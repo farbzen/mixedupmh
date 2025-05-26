@@ -1,10 +1,5 @@
 {pkgs, ...}: {
-  packages = [
-    pkgs.tailwindcss
-  ];
+  packages = [pkgs.tailwindcss];
 
-  languages.rust = {
-    enable = true;
-    channel = "stable";
-  };
+  languages.rust.enable = true;
 }
