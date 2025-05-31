@@ -8,6 +8,7 @@ build_dev:
   before_script:
     - apt update
   script:
+    - cp -r .build/askama.toml .
     - cp -r res/* .
     - cargo build --release
     - cp target/release/mumh .

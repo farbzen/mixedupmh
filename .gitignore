@@ -23,6 +23,7 @@ devenv.lock
 tailwind.config.ts
 
 # Rust
+askama.toml
 rustfmt.toml
 /target
 /templates
