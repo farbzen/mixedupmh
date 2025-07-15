@@ -133,6 +133,12 @@
       "arch_tempered": false
     },
     {
+      "name": "lagiacrus",
+      "capturable": true,
+      "tempered": true,
+      "arch_tempered": false
+    },
+    {
       "name": "lala_barina",
       "capturable": true,
       "tempered": true,
@@ -187,10 +193,16 @@
       "arch_tempered": false
     },
     {
-      "name": "uth_duna",
+      "name": "seregios",
       "capturable": true,
       "tempered": true,
       "arch_tempered": false
+    },
+    {
+      "name": "uth_duna",
+      "capturable": true,
+      "tempered": true,
+      "arch_tempered": true
     },
     {
       "name": "xu_wu",
