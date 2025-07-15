@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  packages = [pkgs.tailwindcss];
+  packages = [pkgs.tailwindcss pkgs.pkg-config];
 
   languages.rust.enable = true;
 
