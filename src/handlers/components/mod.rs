@@ -1,6 +1,6 @@
 pub mod hunter;
-pub mod monster;
 pub mod modals;
+pub mod monster;
 
 use crate::handlers::components::{hunter::hunter, monster::monster};
 use axum::{Router, routing::get};

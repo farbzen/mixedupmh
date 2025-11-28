@@ -160,6 +160,12 @@
       "name": "nu_udra",
       "capturable": true,
       "tempered": true,
+      "arch_tempered": true 
+    },
+    {
+      "name": "omega_planetes",
+      "capturable": false,
+      "tempered": true,
       "arch_tempered": false
     },
     {

@@ -4,8 +4,8 @@ use tower_cookies::Cookies;
 
 use crate::{
     cookies::{
-        DEFAULT_HUNTERNAME, HUNTERNAME, WEAPONNAME,
-        get_cookie_value, set_cookie,
+        DEFAULT_HUNTERNAME, HUNTERNAME, WEAPONNAME, get_cookie_value,
+        set_cookie,
     },
     data::{
         language::{LanguageDictionary, language_dictionary},
