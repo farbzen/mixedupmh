@@ -24,11 +24,12 @@ pub async fn get_cookie_value(
     name: &str,
     default: &str,
 ) -> String {
-    if let Some(cookie) = cookies.get(name) {
-        cookie.value().to_owned()
-    } else {
-        set_cookie(cookies, name, default);
-        default.to_string()
+    match cookies.get(name) {
+        Some(c) => c.value().to_string(),
+        None => {
+            set_cookie(cookies, name, default);
+            default.to_string()
+        }
     }
 }
 
@@ -43,6 +44,9 @@ pub fn set_cookie(cookies: &Cookies, name: &str, value: &str) {
             COOKIE_MAX_AGE,
             COOKIE_SECURE
         ))
-        .unwrap(),
+        .unwrap_or_else(|_| {
+            println!("Error while parsing the new cookie!");
+            Cookie::new("", "")
+        }),
     );
 }

@@ -5,6 +5,7 @@ use crate::{
         MONSTERNAME, TEMPER, WEAPONNAME, get_cookie_value,
     },
     data::language::{LanguageDictionary, language_dictionary, set_language},
+    handlers::errors::ERROR_RENDER,
 };
 use askama::Template;
 use axum::{
@@ -88,7 +89,7 @@ pub async fn index(
         temper: get_cookie_value(&cookies, TEMPER, DEFAULT_TEMPER).await,
         year,
     };
-    let html = template.render().unwrap();
+    let html = template.render().unwrap_or(ERROR_RENDER.to_string());
 
     (StatusCode::OK, Html(html).into_response())
 }

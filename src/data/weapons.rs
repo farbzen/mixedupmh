@@ -16,13 +16,13 @@ pub struct Weapon {
 
 pub async fn load_weapons() -> Weapons {
     let path = current_dir()
-        .unwrap()
+        .unwrap_or_default()
         .join(super::PATH_JSON_FILES)
         .join(PATH_WEAPON_FILE);
 
     let file = read_to_string(path).expect("Unable to read weapon file!");
 
-    serde_json::from_str(&file).unwrap()
+    serde_json::from_str(&file).unwrap_or(Weapons { weapons: vec![] })
 }
 
 pub async fn roll_weapon() -> Weapon {

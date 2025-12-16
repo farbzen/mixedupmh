@@ -16,9 +16,9 @@ pub struct LanguageDictionary {
     content: Value,
 }
 
-impl LanguageDictionary {
-    pub fn get(&self, key: &str) -> &str {
-        self.content[key].as_str().unwrap()
+impl<'a> LanguageDictionary {
+    pub fn get(&'a self, key: &'a str) -> &'a str {
+        self.content[key].as_str().unwrap_or(key)
     }
 }
 
@@ -26,16 +26,16 @@ pub async fn language_dictionary(cookies: &Cookies) -> LanguageDictionary {
     let language = get_cookie_value(cookies, LANGUAGE, DEFAULT_LANGUAGE).await;
 
     let path = current_dir()
-        .unwrap()
+        .unwrap_or_default()
         .join(super::PATH_JSON_FILES)
         .join(PATH_LANGUAGE_FILES)
-        .join(language.to_owned() + ".json");
+        .join(language.to_string() + ".json");
 
     let file = read_to_string(path).expect("Unable to read language file!");
 
     LanguageDictionary {
         lang: language,
-        content: from_str(&file).unwrap(),
+        content: from_str(&file).unwrap_or(Value::Null),
     }
 }
 

@@ -19,13 +19,13 @@ pub struct Monster {
 
 pub async fn load_monsters() -> Monsters {
     let path = current_dir()
-        .unwrap()
+        .unwrap_or_default()
         .join(super::PATH_JSON_FILES)
         .join(PATH_MONSTER_FILE);
 
     let file = read_to_string(path).expect("Unable to read monster file!");
 
-    serde_json::from_str(&file).unwrap()
+    serde_json::from_str(&file).unwrap_or(Monsters { monsters: vec![] })
 }
 
 pub async fn roll_monster() -> Monster {

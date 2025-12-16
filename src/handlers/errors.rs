@@ -4,6 +4,8 @@ use axum::{
     response::{Html, IntoResponse, Response},
 };
 
+pub const ERROR_RENDER: &str = "ERROR: Could not render the template!";
+
 #[derive(Debug, displaydoc::Display, thiserror::Error)]
 enum AppError {
     /// could not render template

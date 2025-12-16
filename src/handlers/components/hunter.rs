@@ -11,6 +11,7 @@ use crate::{
         language::{LanguageDictionary, language_dictionary},
         weapons::{Weapon, roll_weapon},
     },
+    handlers::errors::ERROR_RENDER,
 };
 
 #[derive(Template)]
@@ -28,7 +29,7 @@ pub async fn hunter(
 ) -> impl IntoResponse {
     let hunter = get_cookie_value(
         &cookies,
-        &(HUNTERNAME.to_owned() + &number),
+        &(HUNTERNAME.to_string() + &number),
         DEFAULT_HUNTERNAME,
     )
     .await;
@@ -42,7 +43,7 @@ pub async fn hunter(
         number,
         weapon,
     };
-    let reply = template.render().unwrap();
+    let reply = template.render().unwrap_or(ERROR_RENDER.to_string());
 
     (StatusCode::OK, reply.into_response())
 }

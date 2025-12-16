@@ -20,7 +20,7 @@ pub async fn rename_hunter(
 ) {
     set_cookie(
         &cookies,
-        &(HUNTERNAME.to_owned() + &hunter_rename.number),
+        &(HUNTERNAME.to_string() + &hunter_rename.number),
         &hunter_rename.name,
     );
 }

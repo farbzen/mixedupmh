@@ -8,6 +8,7 @@ use crate::{
         language::{LanguageDictionary, language_dictionary},
         monsters::{Monster, roll_capture, roll_monster, roll_temper},
     },
+    handlers::errors::ERROR_RENDER,
 };
 
 #[derive(Template)]
@@ -35,7 +36,7 @@ pub async fn monster(cookies: Cookies) -> impl IntoResponse {
         monster,
         capture,
     };
-    let reply = template.render().unwrap();
+    let reply = template.render().unwrap_or(ERROR_RENDER.to_string());
 
     (StatusCode::OK, reply.into_response())
 }
