@@ -1,15 +1,19 @@
 {pkgs, ...}: {
-  packages = [pkgs.tailwindcss pkgs.pkg-config];
+  packages = with pkgs; [
+    tailwindcss_4
+    pkg-config
+    prettierd
+  ];
 
   languages.rust.enable = true;
 
   scripts = {
     tailwind.exec = ''
-      tailwindcss -c tools/tailwind/tailwind.config.ts -i tools/tailwind/tailwind.css -o res/static/css/main.css -w
+      tailwindcss -i tools/tailwind/tailwind.css -o res/static/css/main.css -w
     '';
 
     tailwindmini.exec = ''
-      tailwindcss -c tools/tailwind/tailwind.config.ts -i tools/tailwind/tailwind.css -o res/static/css/main.css -m -w
+      tailwindcss -i tools/tailwind/tailwind.css -o res/static/css/main.css -m -w
     '';
   };
 }

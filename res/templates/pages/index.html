@@ -30,7 +30,7 @@
                     hx-swap="none">
                 {% for hunter_number in 1..5 %}
                     <option value="{{ hunter_number }}"
-                            {% if hunter_count == hunter_number %}selected{% endif %}>
+                            {% if hunter_count="" ="hunter_number" %}selected{% endif %}>
                         {{ hunter_number }} {{ lang.get("players") }}
                     </option>
                 {% endfor %}
