@@ -10,7 +10,7 @@
       "name": "arkveld",
       "capturable": true,
       "tempered": true,
-      "arch_tempered": false
+      "arch_tempered": true
     },
     {
       "name": "balahara",
@@ -73,6 +73,12 @@
       "arch_tempered": false
     },
     {
+      "name": "gogmazios",
+      "capturable": false,
+      "tempered": false,
+      "arch_tempered": false
+    },
+    {
       "name": "gore_magala",
       "capturable": true,
       "tempered": true,
@@ -130,7 +136,7 @@
       "name": "jin_dahaad",
       "capturable": false,
       "tempered": true,
-      "arch_tempered": false
+      "arch_tempered": true 
     },
     {
       "name": "lagiacrus",
@@ -160,7 +166,7 @@
       "name": "nu_udra",
       "capturable": true,
       "tempered": true,
-      "arch_tempered": true 
+      "arch_tempered": true
     },
     {
       "name": "omega_planetes",
@@ -190,7 +196,7 @@
       "name": "rey_dau",
       "capturable": true,
       "tempered": true,
-      "arch_tempered": true 
+      "arch_tempered": true
     },
     {
       "name": "rompopolo",
