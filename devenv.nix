@@ -9,11 +9,11 @@
 
   scripts = {
     tailwind.exec = ''
-      tailwindcss -i tools/tailwind/tailwind.css -o res/static/css/main.css -w
+      tailwindcss -i tailwind.css -o static/css/main.css -w
     '';
 
     tailwindmini.exec = ''
-      tailwindcss -i tools/tailwind/tailwind.css -o res/static/css/main.css -m -w
+      tailwindcss -i tailwind.css -o static/css/main.css -m -w
     '';
   };
 }
