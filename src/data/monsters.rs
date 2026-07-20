@@ -1,6 +1,6 @@
 use rand::{random_bool, random_range};
 use serde::Deserialize;
-use std::{env::current_dir, fs::read_to_string};
+use std::fs::read_to_string;
 
 const PATH_MONSTER_FILE: &str = "monsters.json";
 
@@ -18,8 +18,7 @@ pub struct Monster {
 }
 
 pub async fn load_monsters() -> Monsters {
-    let path = current_dir()
-        .unwrap_or_default()
+    let path = crate::paths::base_dir()
         .join(super::PATH_JSON_FILES)
         .join(PATH_MONSTER_FILE);
 
