@@ -17,7 +17,6 @@ pub const DEFAULT_TEMPER: &str = "0";
 const COOKIE_SAMESITE: &str = "SameSite=Lax";
 const COOKIE_PATH: &str = "Path=/";
 const COOKIE_MAX_AGE: &str = "Max-Age=10000000";
-const COOKIE_SECURE: &str = "Secure";
 
 pub async fn get_cookie_value(
     cookies: &Cookies,
@@ -36,13 +35,8 @@ pub async fn get_cookie_value(
 pub fn set_cookie(cookies: &Cookies, name: &str, value: &str) {
     cookies.add(
         Cookie::parse(format!(
-            "{} = {}; {}; {}; {}; {}",
-            name,
-            value,
-            COOKIE_SAMESITE,
-            COOKIE_PATH,
-            COOKIE_MAX_AGE,
-            COOKIE_SECURE
+            "{} = {}; {}; {}; {}",
+            name, value, COOKIE_SAMESITE, COOKIE_PATH, COOKIE_MAX_AGE
         ))
         .unwrap_or_else(|_| {
             println!("Error while parsing the new cookie!");
