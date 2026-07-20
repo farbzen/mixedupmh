@@ -5,9 +5,9 @@
              hx-get="/_components/monster"
              hx-swap="innerHTML swap:.6s settle:.8s"
              hx-trigger="click from:#rollAll throttle:4s">
-            <div class="size-[40rem] text-4xl xl:size-96 xl:text-lg content-end p-3 mt-6 transition-all bg-contain bg-no-repeat bg-center"
+            <div class="text-lg size-96 content-end p-3 mt-6 transition-all bg-contain bg-no-repeat bg-center"
                  style='background-image: url("/assets/images/monsters/{{ temper }}_{{ monster }}.webp")'>
-                <div class="bg-gradient-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2">
+                <div class="bg-linear-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2">
                     <p class="whitespace-nowrap drop-shadow-md">{{ lang.get(monster) }}</p>
                     <p class="whitespace-nowrap drop-shadow-md">
                         {% if capture %}
@@ -21,8 +21,8 @@
         </div>
     </div>
     <div x-data="{ hunterCount: {{ hunter_count }} }">
-        <div class="w-full text-3xl xl:text-base my-5 flex justify-center">
-            <select class="bg-slate-950 rounded-lg shadow-lg w-min py-2 px-4 mx-2"
+        <div class="w-full my-5 flex justify-center">
+            <select class="text-slate-950 rounded-lg shadow-lg w-min p-2 px-4 mx-2"
                     x-model.number="hunterCount"
                     name="count"
                     hx-get="/_actions/hunter/count"
@@ -48,9 +48,9 @@
                          hx-swap="innerHTML swap:{{ 0.6 + hunter_number as f64 * 0.6 }}s settle:.8s"
                          hx-trigger="click from:#rollAll delay:{{ 0.1 + hunter_number as f64 * 0.1 }}s throttle:4s"
                          x-show="hunterCount >= {{ hunter_number }}">
-                        <div class="size-96 text-3xl content-end p-3 m-5 transition-all bg-contain bg-no-repeat bg-center xl:size-60 xl:text-lg"
+                        <div class="content-end p-3 m-5 transition-all bg-contain bg-no-repeat bg-center size-60 text-lg"
                              style='background-image: url("/assets/images/weapons/{{ weapons[hunter_number - 1] }}.webp")'>
-                            <div class="bg-gradient-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2"
+                            <div class="bg-linear-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2"
                                  hx-get="/_actions/hunter/rename"
                                  hx-trigger="change"
                                  hx-swap="none"

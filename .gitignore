@@ -12,3 +12,6 @@ devenv.local.nix
 
 # Rust
 /target
+
+# Tauri
+/gen/schemas

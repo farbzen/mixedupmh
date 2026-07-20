@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="size-full transition-colors overflow-hidden">
+<html class="size-full transition-colors overflow-x-hidden">
     <head>
         <title>{{ lang.get("title") }}</title>
         <meta charset="UTF-8" />
@@ -13,12 +13,10 @@
         <link rel="icon" type="image/x-icon" href="/assets/images/favicon.ico" />
         {% include "components/scripts.html" %}
     </head>
-    <body class="bg-slate-950 text-slate-50 size-full transition-colors overflow-hidden">
-        <div class="content-center">{% include "components/header.html" %}</div>
-        <div class="min-h-[89vh] bg-slate-900 content-center">
+    <body class="bg-slate-950 text-slate-50 size-full transition-colors">
+        <div class="min-h-[95vh] bg-slate-900 content-center">
             {% block page %}{% endblock %}
         </div>
         <div class="content-center">{% include "components/footer.html" %}</div>
-        {% include "components/modals/empty.html" %}
     </body>
 </html>

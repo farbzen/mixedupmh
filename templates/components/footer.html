@@ -1,9 +1,19 @@
 <div
-  class="top-full sticky flex w-full py-[5%] xl:py-[1%] my-auto justify-center text-lg xl:text-xs"
+  class="top-full sticky flex w-full p-4 my-auto justify-center text-xs"
 >
-  <div class="w-1/6 pl-4">
-    <a href="javascript:;" hx-get="/_components/_modals/legal" hx-target="#modal" hx-swap="outerHTML swap:.1s settle:.1s">{{ lang.get("legalnotice") }}</a>
-  </div>
-<div class="w-2/3 text-center">&copy; {{ year }} {{ lang.get("copyright") }}</div>
   <div class="w-1/6"></div>
+  <div class="w-2/3 flex justify-center items-center">&copy; {{ year }} {{ lang.get("copyright") }}</div>
+  <div class="w-1/6 flex justify-end items-center">
+    <div x-data="{ lang: '{{ lang.lang }}' }" hx-swap="outerHTML">
+      <div class="flex gap-2">
+        {% for lang in ["en", "de"] %}
+          <a href="/_actions/language/{{ lang }}">
+            <img src="/assets/images/languages/{{ lang }}.webp"
+                 class="h-4 aspect-auto border-b-2 transition-all"
+                 :class="lang == '{{ lang }}' ? 'border-blue-600' : 'border-transparent'" />
+          </a>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
 </div>

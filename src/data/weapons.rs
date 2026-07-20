@@ -1,6 +1,6 @@
 use rand::random_range;
 use serde::Deserialize;
-use std::{env::current_dir, fs::read_to_string};
+use std::fs::read_to_string;
 
 const PATH_WEAPON_FILE: &str = "weapons.json";
 
@@ -15,8 +15,7 @@ pub struct Weapon {
 }
 
 pub async fn load_weapons() -> Weapons {
-    let path = current_dir()
-        .unwrap_or_default()
+    let path = crate::paths::base_dir()
         .join(super::PATH_JSON_FILES)
         .join(PATH_WEAPON_FILE);
 

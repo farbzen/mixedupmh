@@ -1,5 +1,5 @@
 use serde_json::{Value, from_str};
-use std::{env::current_dir, fs::read_to_string};
+use std::fs::read_to_string;
 use tower_cookies::Cookies;
 
 use crate::cookies::{LANGUAGE, get_cookie_value, set_cookie};
@@ -25,8 +25,7 @@ impl<'a> LanguageDictionary {
 pub async fn language_dictionary(cookies: &Cookies) -> LanguageDictionary {
     let language = get_cookie_value(cookies, LANGUAGE, DEFAULT_LANGUAGE).await;
 
-    let path = current_dir()
-        .unwrap_or_default()
+    let path = crate::paths::base_dir()
         .join(super::PATH_JSON_FILES)
         .join(PATH_LANGUAGE_FILES)
         .join(language.to_string() + ".json");
