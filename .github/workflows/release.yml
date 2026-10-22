@@ -37,10 +37,17 @@ jobs:
         with:
           targets: ${{ matrix.platform == 'macos-latest' && 'aarch64-apple-darwin,x86_64-apple-darwin' || '' }}
 
+      # Tauri CLI >= 2.12.1 is required: older bundlers ship an outdated
+      # libwayland-client in the AppImage, which breaks Mesa's EGL on newer
+      # hosts (blank window). See https://github.com/tauri-apps/tauri/issues/15976
+      - name: install Tauri CLI
+        run: npm install -g @tauri-apps/cli@^2.12.1
+
       - uses: tauri-apps/tauri-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
+          tauriScript: tauri
           args: ${{ matrix.args }}
           tagName: v__VERSION__
           releaseName: v__VERSION__
