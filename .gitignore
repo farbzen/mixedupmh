@@ -15,3 +15,7 @@ devenv.local.nix
 
 # Tauri
 /gen/schemas
+
+# Nix
+result
+result-*
