@@ -44,7 +44,7 @@ The repository consists of the following parts:
 - **Weapon roulette**: assigns one of the 14 weapon types to each of 1–4 hunters.
 - **Custom hunter names**: names and player count persist between sessions.
 - **Bilingual**: UI in English and German, switchable in the footer.
-- **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows.
+- **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows, plus a Nix flake for NixOS.
 
 ## Getting Started
 
@@ -65,6 +65,18 @@ devenv shell
 > Ready-made installers for all platforms are available under
 > [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
 > environment is needed to play.
+
+### Nix and NixOS
+
+The repository is a Nix flake. Run the app without installing it:
+
+```sh
+nix run github:farbzen/mixedupmh
+```
+
+> [!TIP]
+> To install it on NixOS or with Home Manager, use the flake's overlay – see
+> [Nix and NixOS](docs/nix.md).
 
 ## Usage
 
@@ -124,4 +136,5 @@ git push origin v0.5.1
 ## Documentation
 
 - [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
+- [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local builds
 - [Changelog](CHANGELOG.md)
