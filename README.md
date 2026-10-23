@@ -4,7 +4,7 @@
 
 # Mixed Up Monster Hunter
 
-_Ein Zufallsgenerator für Monster Hunter Wilds, der Jagdgruppen Monster und Waffen zulost._
+_A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your hunting party._
 
 [![Version](https://img.shields.io/badge/version-0.5.1-blue?style=flat-square)](CHANGELOG.md)
 [![Rust](https://img.shields.io/badge/Rust-2024-orange?style=flat-square&logo=rust)](https://www.rust-lang.org)
@@ -12,49 +12,48 @@ _Ein Zufallsgenerator für Monster Hunter Wilds, der Jagdgruppen Monster und Waf
 [![htmx](https://img.shields.io/badge/htmx-3366CC?style=flat-square&logo=htmx&logoColor=white)](https://htmx.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 
-[Überblick](#überblick) • [Features](#features) • [Schnellstart](#schnellstart) • [Anwendung](#anwendung) • [Entwicklung](#entwicklung) • [Deployment](#deployment) • [Dokumentation](#dokumentation)
+[Overview](#overview) • [Features](#features) • [Getting Started](#getting-started) • [Usage](#usage) • [Development](#development) • [Deployment](#deployment) • [Documentation](#documentation)
 
 </div>
 
-Mixed Up Monster Hunter (kurz _mumh_) ist eine Desktop-App für Gruppen von bis zu
-vier Spielern, die ihre Jagden in Monster Hunter Wilds abwechslungsreicher
-gestalten wollen: Ein Klick lost das nächste Monster samt Jagdziel und für jeden
-Jäger eine Waffe aus.
+Mixed Up Monster Hunter (_mumh_ for short) is a desktop app for groups of up to
+four players who want more variety in their Monster Hunter Wilds hunts: a single
+click rolls the next monster along with the hunt objective and a weapon for
+every hunter.
 
-## Überblick
+## Overview
 
-Die App ist eine [Tauri](https://tauri.app)-Anwendung, die beim Start einen
-[axum](https://github.com/tokio-rs/axum)-Server auf einem zufälligen Port an
-`127.0.0.1` startet und dessen Oberfläche im Webview-Fenster anzeigt. Die Seiten
-werden serverseitig mit [Askama](https://github.com/askama-rs/askama)
-gerendert und per [htmx](https://htmx.org) und
-[Alpine.js](https://alpinejs.dev) teilweise ausgetauscht; der Zustand (Namen,
-Spielerzahl, letzter Wurf, Sprache) liegt in Cookies.
+The app is a [Tauri](https://tauri.app) application that starts an
+[axum](https://github.com/tokio-rs/axum) server on a random port on `127.0.0.1`
+at launch and displays its UI in the webview window. Pages are rendered
+server-side with [Askama](https://github.com/askama-rs/askama) and partially
+swapped via [htmx](https://htmx.org) and [Alpine.js](https://alpinejs.dev); the
+state (names, player count, last roll, language) is kept in cookies.
 
-Das Repository besteht aus folgenden Teilen:
+The repository consists of the following parts:
 
-- **Anwendung** – Tauri-Fenster und axum-Router, gebaut mit [Rust](https://www.rust-lang.org). Der Code liegt in `src/`.
-- **Templates** – Seiten, Layouts und htmx-Komponenten. Sie liegen in `templates/`.
-- **Spieldaten** – Monster, Waffen und Übersetzungen als JSON. Sie liegen in `json/`.
-- **Statische Dateien** – Bilder, JavaScript und das generierte CSS (Quelle: `tailwind.css`). Sie liegen in `static/`.
+- **Application** – Tauri window and axum router, built with [Rust](https://www.rust-lang.org). The code lives in `src/`.
+- **Templates** – pages, layouts and htmx components. They live in `templates/`.
+- **Game data** – monsters, weapons and translations as JSON. They live in `json/`.
+- **Static files** – images, JavaScript and the generated CSS (source: `tailwind.css`). They live in `static/`.
 
 ## Features
 
-- **Monster-Roulette**: lost eines von 39 Monstern aus, inklusive Stufe (normal, gehärtet, erzgehärtet), sofern das Monster sie kennt.
-- **Jagdziel**: entscheidet bei fangbaren Monstern per Münzwurf zwischen Fangen und Töten.
-- **Waffen-Roulette**: weist jedem von 1–4 Jägern eine der 14 Waffenarten zu.
-- **Eigene Jägernamen**: Namen und Spielerzahl bleiben zwischen den Sitzungen erhalten.
-- **Zweisprachig**: Oberfläche auf Englisch und Deutsch, umschaltbar im Footer.
-- **Plattformübergreifend**: Builds für Linux (AppImage, deb, rpm), macOS (Apple Silicon und Intel) und Windows.
+- **Monster roulette**: rolls one of 39 monsters, including its tier (normal, tempered, arch-tempered) where the monster has one.
+- **Hunt objective**: flips a coin between capture and slay for capturable monsters.
+- **Weapon roulette**: assigns one of the 14 weapon types to each of 1–4 hunters.
+- **Custom hunter names**: names and player count persist between sessions.
+- **Bilingual**: UI in English and German, switchable in the footer.
+- **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows.
 
-## Schnellstart
+## Getting Started
 
-### Voraussetzungen
+### Prerequisites
 
-- [devenv](https://devenv.sh) (stellt Rust, Tauri-CLI, Tailwind CSS und die GTK/WebKit-Bibliotheken bereit)
-- optional [direnv](https://direnv.net) zum automatischen Laden der Umgebung (`.envrc`)
+- [devenv](https://devenv.sh) (provides Rust, the Tauri CLI, Tailwind CSS and the GTK/WebKit libraries)
+- optionally [direnv](https://direnv.net) to load the environment automatically (`.envrc`)
 
-### Entwicklungsumgebung
+### Development environment
 
 ```sh
 git clone git@github.com:farbzen/mixedupmh.git
@@ -63,41 +62,41 @@ devenv shell
 ```
 
 > [!TIP]
-> Fertige Installationspakete für alle Plattformen gibt es unter
-> [Releases](https://github.com/farbzen/mixedupmh/releases) – zum Spielen ist
-> keine Entwicklungsumgebung nötig.
+> Ready-made installers for all platforms are available under
+> [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
+> environment is needed to play.
 
-## Anwendung
+## Usage
 
-App im Entwicklungsmodus starten:
+Start the app in development mode:
 
 ```sh
 cargo tauri dev
 ```
 
-CSS bei Änderungen an Templates oder `tailwind.css` neu erzeugen (Watch-Modus,
-`tailwindmini` erzeugt minifiziertes CSS):
+Regenerate the CSS when templates or `tailwind.css` change (watch mode;
+`tailwindmini` produces minified CSS):
 
 ```sh
 tailwind
 ```
 
 > [!NOTE]
-> Im Entwicklungsmodus liest die App `static/` und `json/` direkt aus dem
-> Projektverzeichnis; erst ein `cargo tauri build` bündelt sie als Ressourcen.
-> Änderungen an den JSON-Dateien greifen deshalb ohne Neubau.
+> In development mode the app reads `static/` and `json/` directly from the
+> project directory; only `cargo tauri build` bundles them as resources.
+> Changes to the JSON files therefore take effect without a rebuild.
 
-Installationspakete lokal bauen:
+Build installers locally:
 
 ```sh
 cargo tauri build
 ```
 
-## Entwicklung
+## Development
 
-### Code-Qualität
+### Code quality
 
-Formatierung nach `rustfmt.toml` (Zeilenbreite 80) und Lint mit Clippy:
+Formatting according to `rustfmt.toml` (line width 80) and linting with Clippy:
 
 ```sh
 cargo fmt
@@ -106,10 +105,10 @@ cargo clippy
 
 ## Deployment
 
-Releases baut der GitHub-Workflow `.github/workflows/release.yml` mit
-[tauri-action](https://github.com/tauri-apps/tauri-action) für Linux, macOS und
-Windows und hängt die Pakete an ein GitHub-Release. Er startet beim Push eines
-Tags `v*` oder manuell:
+The GitHub workflow `.github/workflows/release.yml` builds releases for Linux,
+macOS and Windows with
+[tauri-action](https://github.com/tauri-apps/tauri-action) and attaches the
+packages to a GitHub release. It runs when a `v*` tag is pushed, or manually:
 
 ```sh
 git tag v0.5.1
@@ -117,11 +116,12 @@ git push origin v0.5.1
 ```
 
 > [!IMPORTANT]
-> Die Version steht in `version`, `Cargo.toml` und `tauri.conf.json` und muss
-> in allen drei Dateien angehoben und in [CHANGELOG.md](CHANGELOG.md)
-> eingetragen werden; der Release-Name wird aus der Tauri-Version gebildet.
+> The version is stored in `version`, `Cargo.toml` and `tauri.conf.json`; it
+> must be bumped in all three files and recorded in
+> [CHANGELOG.md](CHANGELOG.md). The release name is derived from the Tauri
+> version.
 
-## Dokumentation
+## Documentation
 
-- [Spieldaten pflegen](docs/spieldaten.md) – Monster, Waffen und Sprachen ergänzen
+- [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
 - [Changelog](CHANGELOG.md)
