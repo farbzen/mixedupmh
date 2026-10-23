@@ -1,3 +1,3 @@
 # Commits
 
-- Commit-Nachrichten entsprechen immer dem Standard der `Conventional Commits`.
+- Commit messages always follow the `Conventional Commits` standard.

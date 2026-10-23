@@ -1,9 +1,9 @@
 # Changelog
 
-- Für sämtliche Anpassungen am Code der Anwendung(en) müssen Einträge im
-  Changelog unter `/CHANGELOG.md` hinterlegt werden, die die inhaltliche
-  Änderung widerspiegeln. Der Code der Anwendung(en) liegt in der Regel in einem
-  der folgenden Verzeichnisse:
+- Every change to the code of the application(s) must be recorded in the
+  changelog at `/CHANGELOG.md` with entries that reflect the substance of the
+  change. The application code usually lives in one of the following
+  directories:
   - `/src*`
   - `/app*`
   - `/backend*`
@@ -11,33 +11,32 @@
   - `/frontend*`
   - `/cli*`
 
-- Anpassungen, welche sich ausschließlich auf die Entwicklungsumgebungen oder
-  das Repository selbst auswirken sind vom Changelog ausgenommen. Beispiele
-  hierfür sind Änderungen in folgenden Verzeichnissen:
-  - `/` (Dateien auf der root-Ebene)
-  - `/.assets` (Assets für die Darstellung in der README.md)
-  - `/.claude` (CLAUDE Code)
+- Changes that only affect the development environments or the repository
+  itself are exempt from the changelog. Examples are changes in the following
+  directories:
+  - `/` (files at the root level)
+  - `/.assets` (assets for rendering the README.md)
+  - `/.claude` (Claude Code)
   - `/.gitlab` (GitLab)
   - `/.vscode` (Visual Studio Code)
-  - `/docs` (Dokumentation)
+  - `/docs` (documentation)
 
-- Grundlegende Prinzipien:
-  - Changelogs werden für Menschen geschrieben, nicht für Maschinen.
-  - Für jede einzelne Version sollte es einen Eintrag geben.
-  - Änderungen der selben Art sollten in Bereiche gruppiert werden.
-  - Versionen und Bereiche sollten verlinkt werden können.
-  - Die neuste Version kommt als erstes.
-  - Das Release-Datum jeder Version muss angegeben sein.
-  - Gib an, ob du dich an die Semantische Versionierung hältst.
+- Guiding principles:
+  - Changelogs are for humans, not machines.
+  - There should be an entry for every single version.
+  - Changes of the same type should be grouped.
+  - Versions and sections should be linkable.
+  - The latest version comes first.
+  - The release date of each version must be stated.
+  - State whether you follow Semantic Versioning.
 
-  - Arten von Änderungen
-    - `Added` für neue Features.
-    - `Changed` für Änderungen an der bestehenden Funktionalität.
-    - `Deprecated` für Features, die in zukünftigen Versionen entfernt werden.
-    - `Removed` für Deprecated-Features, die in dieser Version entfernt wurden.
-    - `Fixed` für alle Bug-Fixes.
-    - `Security` um Benutzer im Fall von geschlossenen Sicherheitslücken zu
-      einer Aktualisierung aufzufordern.
+  - Types of changes
+    - `Added` for new features.
+    - `Changed` for changes in existing functionality.
+    - `Deprecated` for features that will be removed in upcoming versions.
+    - `Removed` for deprecated features removed in this version.
+    - `Fixed` for any bug fixes.
+    - `Security` to urge users to upgrade in case of fixed vulnerabilities.
 
-  - Halte Anpassungen, die noch keiner neuen Version fest zugeordnet sind in
-    einem dedizierten `Unreleased`-Abschnitt vor.
+  - Keep changes not yet assigned to a new version in a dedicated `Unreleased`
+    section.

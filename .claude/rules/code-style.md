@@ -1,5 +1,5 @@
 # Code style
 
-- Linter-Meldungen müssen in jedem Fall behoben werden, ohne die Funktionaltät
-  des Codes einzuschränken.
-- Vermeide Kommentare im Code, wähle stattdessen sprechende Namen für Objekte.
+- Linter warnings must always be fixed without restricting the functionality of
+  the code.
+- Avoid comments in code; choose descriptive names for objects instead.

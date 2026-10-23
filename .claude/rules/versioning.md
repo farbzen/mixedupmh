@@ -1,5 +1,5 @@
-# Versionierung
+# Versioning
 
-- Für die Versionierung der Applikationen wird Semantic Versioning verwendet
+- The applications are versioned with Semantic Versioning
   (MAJOR.MINOR.PATCH).
-- Die aktuelle Version wird jederzeit in der Datei `/version` hinterlegt.
+- The current version is always stored in the file `/version`.

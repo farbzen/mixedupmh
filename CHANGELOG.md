@@ -1,11 +1,10 @@
 # Changelog
 
-Alle nennenswerten Änderungen an diesem Projekt werden in dieser Datei
-dokumentiert.
+All notable changes to this project will be documented in this file.
 
-Das Format basiert auf [Keep a Changelog](https://keepachangelog.com/de/1.1.0/),
-und dieses Projekt hält sich an
-[Semantic Versioning](https://semver.org/lang/de/spec/v2.0.0.html).
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to
+[Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
@@ -13,64 +12,64 @@ und dieses Projekt hält sich an
 
 ### Fixed
 
-- Leeres Fenster der AppImage auf neueren Linux-Systemen, verursacht durch eine
-  veraltete, mitgelieferte `libwayland-client`.
+- Blank window of the AppImage on newer Linux systems, caused by an outdated
+  bundled `libwayland-client`.
 
 ## [0.5.0] - 2026-07-21
 
 ### Added
 
-- Monster Gogmazios und Omega Planetes.
-- Erzgehärtete Varianten von Arkveld, Jin Dahaad und Nu Udra.
-- Installationspakete für Linux, macOS und Windows über GitHub-Releases.
+- Monsters Gogmazios and Omega Planetes.
+- Arch-tempered variants of Arkveld, Jin Dahaad and Nu Udra.
+- Installers for Linux, macOS and Windows via GitHub releases.
 
 ### Changed
 
-- Die Anwendung läuft als Desktop-App auf Basis von Tauri statt als
-  eigenständiger Webserver.
-- Tailwind CSS auf Version 4 aktualisiert.
-- Abhängigkeiten aktualisiert.
+- The application runs as a desktop app based on Tauri instead of a standalone
+  web server.
+- Upgraded Tailwind CSS to version 4.
+- Updated dependencies.
 
 ### Fixed
 
-- Abstürze durch ungeprüfte Fehlerfälle beim Lesen von Daten und Cookies.
-- Fehlerhafte Auswertung der Startseite.
+- Crashes caused by unchecked error cases when reading data and cookies.
+- Faulty parsing of the start page.
 
 ## 0.4.0 - 2025-07-15
 
 ### Added
 
-- Monster Lagiacrus und Seregios.
-- Erzgehärteter Uth Duna.
+- Monsters Lagiacrus and Seregios.
+- Arch-tempered Uth Duna.
 
 ### Fixed
 
-- Bild des erzgehärteten Rey Dau.
+- Image of the arch-tempered Rey Dau.
 
 ## 0.3.0 - 2025-04-29
 
 ### Added
 
-- Erzgehärteter Rey Dau.
+- Arch-tempered Rey Dau.
 
 ## 0.2.1 - 2025-04-24
 
 ### Fixed
 
-- Kleinere Verbesserungen an Oberfläche und Bedienung.
+- Minor UI and UX improvements.
 
 ## 0.2.0 - 2025-04-24
 
 ### Changed
 
-- Rechtlicher Hinweis neu positioniert und Inhalte zentriert.
+- Repositioned the legal notice and centered the content.
 
 ## 0.1.0 - 2025-04-22
 
 ### Added
 
-- Erste Version: Zufallsauswahl von Monster, Stufe und Jagdziel sowie Waffen
-  für bis zu vier Jäger, Oberfläche auf Deutsch und Englisch.
+- First version: random selection of monster, tier and hunt objective as well
+  as weapons for up to four hunters, UI in German and English.
 
 [Unreleased]: https://github.com/farbzen/mixedupmh/compare/v0.5.1...HEAD
 [0.5.1]: https://github.com/farbzen/mixedupmh/compare/v0.5.0...v0.5.1

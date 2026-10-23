@@ -1,86 +1,87 @@
-# README-Handhabung
+# README handling
 
-- Betrachte das gesamte Projekt innerhalb des Repositories und schreibe eine
-  `README.md`, die es vollständig im Überblick abdeckt (alle Apps, Features,
-  Schnellstart, wichtigste Befehle), aber knapp bleibt.
-- Details wie vollständige Listen von Umgebungsvariablen,
-  Schnittstellenprotokolle, Test- und Werkzeugdetails oder Betriebs- und
-  Notfallanleitungen gehören in eigene Dateien unter `docs/` und werden aus der
-  README nur verlinkt.
-  Passt keine, eine neue Datei unter `docs/` anlegen und unter „Dokumentation“
-  verlinken; Unterprojekte mit eigener README (z. B. `examples/*`) pflegen ihre
-  Details dort.
-- Sollte bereits eine `README.md` vorhanden sein, die über eine bloße Vorlage
-  hinausgeht (Beispiel: Inhalt beschränkt sich auf "# VORLAGE"), ergänze die
-  vorhandene `README.md` um neue Apps, Befehle und Verweise; Details in die
-  passende Datei unter `docs/`.
-- Da die Themen `LICENSE`, `CHANGELOG` und `CONTRIBUTING` in eigenen Dateien
-  behandelt werden, darf maximal auf diese Dateien verwiesen werden.
+- Consider the entire project within the repository and write a `README.md`
+  that gives a complete overview of it (all apps, features, getting started,
+  key commands) while staying concise.
+- Details such as complete lists of environment variables, interface
+  protocols, test and tooling details, or operations and emergency runbooks
+  belong in separate files under `docs/` and are only linked from the README.
+  If none fits, create a new file under `docs/` and link it under
+  "Documentation"; subprojects with their own README (e.g. `examples/*`) keep
+  their details there.
+- If a `README.md` already exists that goes beyond a bare template (example:
+  the content is limited to "# TEMPLATE"), extend the existing `README.md` with
+  new apps, commands and references; put details in the matching file under
+  `docs/`.
+- Since `LICENSE`, `CHANGELOG` and `CONTRIBUTING` are covered in their own
+  files, at most link to these files.
 
-## README-Struktur
+## README structure
 
-Destilliert aus den Vorbildern:
+Distilled from these role models:
 
 - Azure-Samples/serverless-chat-langchainjs
 - Azure-Samples/serverless-recipes-javascript
 - sinedied/run-on-output
 - sinedied/smoke
 
-## Was die Vorbilder gemeinsam haben
+## What the role models have in common
 
-- **Zentrierter Kopf**: Titel, ein Satz Tagline, Badges, Sprungnavigation
-  (`[Überblick](#überblick) • [Schnellstart](#schnellstart) • …`).
-- **Ein Absatz direkt nach dem Kopf**, der sagt, was das Projekt ist und für wen.
-- **Überblick mit Komponentenliste**: je Komponente ein Stichpunkt mit
-  Technologie (verlinkt) und Verzeichnis (`Der Code liegt in packages/api`).
-- **Features** als fettgedruckte Stichwörter mit einem Halbsatz Nutzen.
-- **Getting Started** mit Voraussetzungen und mehreren Wegen in die
-  Entwicklungsumgebung, danach **Run/Usage** mit kopierbaren Befehlsblöcken.
-- **GitHub-Hinweisboxen** (`> [!TIP]`, `> [!NOTE]`, `> [!IMPORTANT]`) für
-  Stolpersteine statt Fließtext.
-- **Resources / Troubleshooting / Getting Help** am Ende, Contributing und
-  License nur als kurzer Verweis.
+- **Centered header**: title, one-sentence tagline, badges, jump navigation
+  (`[Overview](#overview) • [Getting Started](#getting-started) • …`).
+- **One paragraph right after the header** stating what the project is and who
+  it is for.
+- **Overview with a component list**: one bullet per component with its
+  technology (linked) and directory (`The code lives in packages/api`).
+- **Features** as bold keywords with a half-sentence of benefit.
+- **Getting Started** with prerequisites and several ways into the development
+  environment, followed by **Run/Usage** with copyable command blocks.
+- **GitHub alert boxes** (`> [!TIP]`, `> [!NOTE]`, `> [!IMPORTANT]`) for
+  pitfalls instead of prose.
+- **Resources / Troubleshooting / Getting Help** at the end, Contributing and
+  License only as a short reference.
 
-## Gliederung für dieses Monorepo
+## Outline for this monorepo
 
-Abschnitte ohne Inhalt im Repo weglassen statt mit Füllsätzen zu bestücken.
+Omit sections that have no content in the repo instead of padding them with
+filler sentences.
 
 ~~~md
 <div align="center">
 
-# <Projektname>
+# <Project name>
 
-_<Tagline in einem Satz>_
+_<One-sentence tagline>_
 
 [![Version](https://img.shields.io/badge/version-<X.Y.Z>-blue?style=flat-square)](CHANGELOG.md)
-<!-- weitere Badges nur für tatsächlich genutzte Technologien -->
+<!-- further badges only for technologies actually used -->
 
-[Überblick](#überblick) • [Schnellstart](#schnellstart) • [Anwendungen](#anwendungen) • [Entwicklung](#entwicklung) • [Dokumentation](#dokumentation)
+[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Development](#development) • [Documentation](#documentation)
 
 </div>
 
-<Ein Absatz: Was ist das Projekt, für wen, welches Problem löst es.>
+<One paragraph: what the project is, who it is for, which problem it solves.>
 
-## Überblick
+## Overview
 
-<Wofür das Projekt da ist, ein bis zwei Absätze.>
+<What the project is for, one or two paragraphs.>
 
-Das Monorepo besteht aus folgenden Anwendungen:
+The monorepo consists of the following applications:
 
-- **<app>** – <Zweck>, gebaut mit [<Technologie>](<url>). Der Code liegt in `<verzeichnis>/`.
+- **<app>** – <purpose>, built with [<technology>](<url>). The code lives in `<directory>/`.
 - …
 
 ## Features
 
-- **<Stichwort>**: <Nutzen in einem Halbsatz>.
+- **<Keyword>**: <benefit in half a sentence>.
 
-## Schnellstart
+## Getting Started
 
-### Voraussetzungen
+### Prerequisites
 
-- [devenv](https://devenv.sh) (stellt Python, Node, MariaDB … bereit)
+- [devenv](https://devenv.sh) (provides Python, Node, MariaDB …)
 
-### Entwicklungsumgebung
+### Development environment
 
 ```sh
 git clone <repo>
@@ -89,63 +90,62 @@ devenv shell
 ```
 
 > [!TIP]
-> <Stolperstein oder Abkürzung, falls vorhanden>
+> <Pitfall or shortcut, if any>
 
-## Anwendungen
+## Applications
 
 ### <app>
 
-<Zweck, Starten, nur die wichtigste Konfiguration; Details per Link nach docs/>
+<Purpose, how to start, only the most important configuration; details linked to docs/>
 
 ```sh
-<Startbefehl>
+<start command>
 ```
 
-## Entwicklung
+## Development
 
 ### Tests
 
 ```sh
-<Testbefehl je App>
+<test command per app>
 ```
 
-### Code-Qualität
+### Code quality
 
-<Linter/Formatter/Typprüfung mit Befehlen, aus ruff.toml, pyrightconfig.json usw.>
+<Linter/formatter/type checking with commands, from ruff.toml, pyrightconfig.json etc.>
 
-### API-Dokumentation
+### API documentation
 
-<z. B. Doxygen, OpenAPI unter /docs – nur wenn vorhanden>
+<e.g. Doxygen, OpenAPI at /docs – only if present>
 
 ## Deployment
 
-<Kurzbeschreibung und Verweis auf docs/deployment.md – Abschnitt nicht
-entfernen, Meldungen der Deploy-Skripte verweisen auf „README (section
-Deployment)“>
+<Short description and link to docs/deployment.md – do not remove this
+section, messages of the deploy scripts refer to "README (section
+Deployment)">
 
-## Dokumentation
+## Documentation
 
-- [<Thema>](docs/<datei>.md)
+- [<Topic>](docs/<file>.md)
 - [Architecture Decision Records](docs/adr/)
 - [Changelog](CHANGELOG.md)
 
-## Mitwirken
+## Contributing
 
-Siehe [CONTRIBUTING.md](CONTRIBUTING.md).
+See [CONTRIBUTING.md](CONTRIBUTING.md).
 
-## Lizenz
+## License
 
-Siehe [LICENSE](LICENSE).
+See [LICENSE](LICENSE).
 ~~~
 
-## Hinweise
+## Notes
 
-- **Changelog, Contributing, Lizenz** stehen in eigenen Dateien. In der README
-  nur verlinken – kopierte Inhalte laufen sonst auseinander. Existiert eine
-  der Dateien nicht, den Verweis weglassen.
-- **Befehle** nur aufnehmen, wenn sie sich aus dem Repo belegen lassen
-  (`devenv.nix`, `pyproject.toml`, `package.json`, `pytest.ini`, …).
-- **Badges** nur für Fakten, die im Repo stehen (Version aus `/version`,
-  eingesetzte Sprachen/Frameworks). Keine Build-Badges ohne bekannte CI-URL.
-- **Bilder/Logos** nur referenzieren, wenn die Datei existiert (z. B. unter
-  `.assets/`).
+- **Changelog, Contributing, License** live in their own files. Only link them
+  from the README – copied content drifts apart otherwise. If one of the files
+  does not exist, omit the reference.
+- **Commands** only if they can be backed by the repo (`devenv.nix`,
+  `pyproject.toml`, `package.json`, `pytest.ini`, …).
+- **Badges** only for facts stated in the repo (version from `/version`,
+  languages/frameworks in use). No build badges without a known CI URL.
+- **Images/logos** only if the file exists (e.g. under `.assets/`).
