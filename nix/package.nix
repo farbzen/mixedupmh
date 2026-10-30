@@ -49,6 +49,7 @@ rustPlatform.buildRustPackage {
   meta = {
     description = "Randomizer for Monster Hunter Wilds that rolls monsters and weapons for your hunting party";
     homepage = "https://github.com/farbzen/mixedupmh";
+    license = lib.licenses.mit;
     platforms = lib.platforms.linux;
     mainProgram = "mumh";
   };
