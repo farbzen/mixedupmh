@@ -11,6 +11,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=flat-square&logo=tauri)](https://tauri.app)
 [![htmx](https://img.shields.io/badge/htmx-3366CC?style=flat-square&logo=htmx&logoColor=white)](https://htmx.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
 [Overview](#overview) • [Features](#features) • [Getting Started](#getting-started) • [Usage](#usage) • [Development](#development) • [Deployment](#deployment) • [Documentation](#documentation)
 
@@ -138,3 +139,7 @@ git push origin v0.5.1
 - [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
 - [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local builds
 - [Changelog](CHANGELOG.md)
+
+## License
+
+See [LICENSE](LICENSE).
