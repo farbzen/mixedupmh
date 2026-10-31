@@ -13,7 +13,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Documentation](#documentation)
+[Overview](#overview) • [Applications](#applications) • [Deployment](#deployment) • [Documentation](#documentation)
 
 </div>
 
@@ -47,30 +47,20 @@ The repository consists of the following parts:
 - **Bilingual**: UI in English and German, switchable in the footer.
 - **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows, plus a Nix flake for NixOS.
 
-## Getting Started
+## Applications
+
+### mumh
+
+The desktop app itself.
 
 > [!TIP]
 > Ready-made installers for all platforms are available under
 > [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
 > environment is needed to play.
 
-For development you need [devenv](https://devenv.sh), which provides Rust, the
-Tauri CLI, Tailwind CSS and the GTK/WebKit libraries;
-[direnv](https://direnv.net) optionally loads the environment automatically
-(`.envrc`).
-
-```sh
-git clone git@github.com:farbzen/mixedupmh.git
-cd mixedupmh
-devenv shell
-```
-
-## Applications
-
-### mumh
-
-The desktop app itself. Start it in development mode and keep the CSS up to
-date in a second shell:
+For development, enter the [devenv](https://devenv.sh) shell (`devenv shell`,
+or automatically via [direnv](https://direnv.net)), then start the app in
+development mode and keep the CSS up to date in a second shell:
 
 ```sh
 cargo tauri dev
@@ -88,7 +78,7 @@ On Nix, run the app straight from the flake without installing it:
 nix run github:farbzen/mixedupmh
 ```
 
-Code quality checks, CSS scripts and local builds are described in
+Setup, code quality checks, CSS scripts and local builds are described in
 [Development](docs/development.md); installation on NixOS in
 [Nix and NixOS](docs/nix.md).
 
@@ -112,7 +102,7 @@ git push origin v0.5.1
 
 ## Documentation
 
-- [Development](docs/development.md) – project layout, CSS, code quality, local builds
+- [Development](docs/development.md) – setup, project layout, CSS, code quality, local builds
 - [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
 - [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local builds
 - [Changelog](CHANGELOG.md)

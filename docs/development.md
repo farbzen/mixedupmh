@@ -3,6 +3,18 @@
 All commands run inside the devenv shell (`devenv shell`, or automatically via
 direnv).
 
+## Setup
+
+[devenv](https://devenv.sh) provides Rust, the Tauri CLI, Tailwind CSS and the
+GTK/WebKit libraries; [direnv](https://direnv.net) optionally loads the
+environment automatically (`.envrc`).
+
+```sh
+git clone git@github.com:farbzen/mixedupmh.git
+cd mixedupmh
+devenv shell
+```
+
 ## Project layout
 
 | Path            | Content                                                  |
