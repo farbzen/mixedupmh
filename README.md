@@ -13,7 +13,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Applications](#applications) • [Deployment](#deployment) • [Documentation](#documentation)
+[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Documentation](#documentation)
 
 </div>
 
@@ -47,20 +47,32 @@ The repository consists of the following parts:
 - **Bilingual**: UI in English and German, switchable in the footer.
 - **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows, plus a Nix flake for NixOS.
 
-## Applications
-
-### mumh
-
-The desktop app itself.
+## Getting Started
 
 > [!TIP]
 > Ready-made installers for all platforms are available under
 > [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
 > environment is needed to play.
 
-For development, enter the [devenv](https://devenv.sh) shell (`devenv shell`,
-or automatically via [direnv](https://direnv.net)), then start the app in
-development mode and keep the CSS up to date in a second shell:
+### Prerequisites
+
+- [devenv](https://devenv.sh) (provides Rust, the Tauri CLI, Tailwind CSS and the GTK/WebKit libraries)
+- optional: [direnv](https://direnv.net) to load the environment automatically
+
+### Development environment
+
+```sh
+git clone git@github.com:farbzen/mixedupmh.git
+cd mixedupmh
+devenv shell
+```
+
+## Applications
+
+### mumh
+
+The desktop app itself. Start it in development mode and keep the CSS up to
+date in a second shell:
 
 ```sh
 cargo tauri dev
@@ -78,8 +90,8 @@ On Nix, run the app straight from the flake without installing it:
 nix run github:farbzen/mixedupmh
 ```
 
-Setup, code quality checks, CSS scripts and local builds are described in
-[Development](docs/development.md); installation on NixOS in
+Project layout, CSS scripts, code quality checks and local builds are described
+in [Development](docs/development.md); installation on NixOS in
 [Nix and NixOS](docs/nix.md).
 
 ## Deployment
