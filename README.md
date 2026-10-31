@@ -13,7 +13,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Features](#features) • [Getting Started](#getting-started) • [Usage](#usage) • [Development](#development) • [Deployment](#deployment) • [Documentation](#documentation)
+[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Documentation](#documentation)
 
 </div>
 
@@ -33,10 +33,10 @@ state (names, player count, last roll, language) is kept in cookies.
 
 The repository consists of the following parts:
 
-- **Application** – Tauri window and axum router, built with [Rust](https://www.rust-lang.org). The code lives in `src/`.
+- **mumh** – Tauri window and axum router, built with [Rust](https://www.rust-lang.org). The code lives in `src/`.
 - **Templates** – pages, layouts and htmx components. They live in `templates/`.
 - **Game data** – monsters, weapons and translations as JSON. They live in `json/`.
-- **Static files** – images, JavaScript and the generated CSS (source: `tailwind.css`). They live in `static/`.
+- **Static files** – images, JavaScript and the CSS generated with [Tailwind CSS](https://tailwindcss.com) from `tailwind.css`. They live in `static/`.
 
 ## Features
 
@@ -49,12 +49,15 @@ The repository consists of the following parts:
 
 ## Getting Started
 
-### Prerequisites
+> [!TIP]
+> Ready-made installers for all platforms are available under
+> [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
+> environment is needed to play.
 
-- [devenv](https://devenv.sh) (provides Rust, the Tauri CLI, Tailwind CSS and the GTK/WebKit libraries)
-- optionally [direnv](https://direnv.net) to load the environment automatically (`.envrc`)
-
-### Development environment
+For development you need [devenv](https://devenv.sh), which provides Rust, the
+Tauri CLI, Tailwind CSS and the GTK/WebKit libraries;
+[direnv](https://direnv.net) optionally loads the environment automatically
+(`.envrc`).
 
 ```sh
 git clone git@github.com:farbzen/mixedupmh.git
@@ -62,59 +65,32 @@ cd mixedupmh
 devenv shell
 ```
 
-> [!TIP]
-> Ready-made installers for all platforms are available under
-> [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
-> environment is needed to play.
+## Applications
 
-### Nix and NixOS
+### mumh
 
-The repository is a Nix flake. Run the app without installing it:
-
-```sh
-nix run github:farbzen/mixedupmh
-```
-
-> [!TIP]
-> To install it on NixOS or with Home Manager, use the flake's overlay – see
-> [Nix and NixOS](docs/nix.md).
-
-## Usage
-
-Start the app in development mode:
+The desktop app itself. Start it in development mode and keep the CSS up to
+date in a second shell:
 
 ```sh
 cargo tauri dev
-```
-
-Regenerate the CSS when templates or `tailwind.css` change (watch mode;
-`tailwindmini` produces minified CSS):
-
-```sh
 tailwind
 ```
 
 > [!NOTE]
 > In development mode the app reads `static/` and `json/` directly from the
-> project directory; only `cargo tauri build` bundles them as resources.
-> Changes to the JSON files therefore take effect without a rebuild.
+> project directory, so changes to the game data take effect without a
+> rebuild. Installers built with `cargo tauri build` bundle them as resources.
 
-Build installers locally:
-
-```sh
-cargo tauri build
-```
-
-## Development
-
-### Code quality
-
-Formatting according to `rustfmt.toml` (line width 80) and linting with Clippy:
+On Nix, run the app straight from the flake without installing it:
 
 ```sh
-cargo fmt
-cargo clippy
+nix run github:farbzen/mixedupmh
 ```
+
+Code quality checks, CSS scripts and local builds are described in
+[Development](docs/development.md); installation on NixOS in
+[Nix and NixOS](docs/nix.md).
 
 ## Deployment
 
@@ -136,6 +112,7 @@ git push origin v0.5.1
 
 ## Documentation
 
+- [Development](docs/development.md) – project layout, CSS, code quality, local builds
 - [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
 - [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local builds
 - [Changelog](CHANGELOG.md)
