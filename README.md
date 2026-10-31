@@ -13,7 +13,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Documentation](#documentation)
+[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Development](#development) • [Documentation](#documentation)
 
 </div>
 
@@ -90,9 +90,28 @@ On Nix, run the app straight from the flake without installing it:
 nix run github:farbzen/mixedupmh
 ```
 
-Project layout, CSS scripts, code quality checks and local builds are described
-in [Development](docs/development.md); installation on NixOS in
+Project layout and CSS scripts are described in
+[Development](docs/development.md); installation on NixOS in
 [Nix and NixOS](docs/nix.md).
+
+## Development
+
+### Code quality
+
+Formatting follows `rustfmt.toml` (line width 80); linting uses Clippy:
+
+```sh
+cargo fmt
+cargo clippy
+```
+
+### Local builds
+
+Build the installers for the current platform:
+
+```sh
+cargo tauri build
+```
 
 ## Deployment
 
