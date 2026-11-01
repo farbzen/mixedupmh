@@ -13,7 +13,8 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Getting Started](#getting-started) • [Applications](#applications) • [Development](#development) • [Documentation](#documentation)
+[Overview](#overview) • [Getting Started](#getting-started) •
+[Documentation](#documentation)
 
 </div>
 
@@ -33,56 +34,46 @@ state (names, player count, last roll, language) is kept in cookies.
 
 The repository consists of the following parts:
 
-- **mumh** – Tauri window and axum router, built with [Rust](https://www.rust-lang.org). The code lives in `src/`.
-- **Templates** – pages, layouts and htmx components. They live in `templates/`.
-- **Game data** – monsters, weapons and translations as JSON. They live in `json/`.
-- **Static files** – images, JavaScript and the CSS generated with [Tailwind CSS](https://tailwindcss.com) from `tailwind.css`. They live in `static/`.
+- **mumh** – Tauri window and axum router, built with
+  [Rust](https://www.rust-lang.org). The code lives in `src/`.
+- **Templates** – pages, layouts and htmx components, built with
+  [Askama](https://github.com/askama-rs/askama). They live in `templates/`.
+- **Game data** – monsters, weapons and translations as JSON. They live in
+  `json/`.
+- **Static files** – images, JavaScript and the CSS generated with
+  [Tailwind CSS](https://tailwindcss.com) from `tailwind.css`. They live in
+  `static/`.
 
 ## Features
 
-- **Monster roulette**: rolls one of 39 monsters, including its tier (normal, tempered, arch-tempered) where the monster has one.
-- **Hunt objective**: flips a coin between capture and slay for capturable monsters.
-- **Weapon roulette**: assigns one of the 14 weapon types to each of 1–4 hunters.
+- **Monster roulette**: rolls one of 39 monsters, including its tier (normal,
+  tempered, arch-tempered) where the monster has one.
+- **Hunt objective**: flips a coin between capture and slay for capturable
+  monsters.
+- **Weapon roulette**: assigns one of the 14 weapon types to each of 1–4
+  hunters.
 - **Custom hunter names**: names and player count persist between sessions.
 - **Bilingual**: UI in English and German, switchable in the footer.
-- **Cross-platform**: builds for Linux (AppImage, deb, rpm), macOS (Apple Silicon and Intel) and Windows, plus a Nix flake for NixOS.
+- **Cross-platform**: installers for Linux, macOS and Windows, plus a Nix flake
+  for NixOS.
 
 ## Getting Started
 
-> [!TIP]
-> Ready-made installers for all platforms are available under
-> [Releases](https://github.com/farbzen/mixedupmh/releases) – no development
-> environment is needed to play.
-
 ### Prerequisites
 
-- [devenv](https://devenv.sh) (provides Rust, the Tauri CLI, Tailwind CSS and the GTK/WebKit libraries)
-- optional: [direnv](https://direnv.net) to load the environment automatically
+- Linux (x86_64), macOS (Apple Silicon or Intel) or Windows
+- optional: [Nix](https://nixos.org) with flakes enabled
 
-### Development environment
+### Installation
 
-```sh
-git clone git@github.com:farbzen/mixedupmh.git
-cd mixedupmh
-devenv shell
-```
+Download the package for your platform from the latest
+[release](https://github.com/farbzen/mixedupmh/releases):
 
-## Applications
-
-### mumh
-
-The desktop app itself. Start it in development mode and keep the CSS up to
-date in a second shell:
-
-```sh
-cargo tauri dev
-tailwind
-```
-
-> [!NOTE]
-> In development mode the app reads `static/` and `json/` directly from the
-> project directory, so changes to the game data take effect without a
-> rebuild. Installers built with `cargo tauri build` bundle them as resources.
+| Platform | Packages                  |
+| -------- | ------------------------- |
+| Linux    | AppImage, `.deb`, `.rpm`  |
+| macOS    | `.dmg` (aarch64, x64)     |
+| Windows  | `.msi`, setup `.exe`      |
 
 On Nix, run the app straight from the flake without installing it:
 
@@ -90,52 +81,21 @@ On Nix, run the app straight from the flake without installing it:
 nix run github:farbzen/mixedupmh
 ```
 
-Project layout and CSS scripts are described in
-[Development](docs/development.md); installation on NixOS in
-[Nix and NixOS](docs/nix.md).
+> [!TIP]
+> To install the app permanently on NixOS or with Home Manager, add the flake's
+> overlay as described in [Nix and NixOS](docs/nix.md).
 
-## Development
-
-### Code quality
-
-Formatting follows `rustfmt.toml` (line width 80); linting uses Clippy:
-
-```sh
-cargo fmt
-cargo clippy
-```
-
-### Local builds
-
-Build the installers for the current platform:
-
-```sh
-cargo tauri build
-```
-
-## Deployment
-
-The GitHub workflow `.github/workflows/release.yml` builds releases for Linux,
-macOS and Windows with
-[tauri-action](https://github.com/tauri-apps/tauri-action) and attaches the
-packages to a GitHub release. It runs when a `v*` tag is pushed, or manually:
-
-```sh
-git tag v0.5.1
-git push origin v0.5.1
-```
-
-> [!IMPORTANT]
-> The version is stored in `version`, `Cargo.toml` and `tauri.conf.json`; it
-> must be bumped in all three files and recorded in
-> [CHANGELOG.md](CHANGELOG.md). The release name is derived from the Tauri
-> version.
+To build and run the app from source, follow
+[Development](docs/development.md).
 
 ## Documentation
 
-- [Development](docs/development.md) – setup, project layout, CSS, code quality, local builds
-- [Maintaining game data](docs/game-data.md) – adding monsters, weapons and languages
-- [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local builds
+- [Development](docs/development.md) – setup, project layout, CSS, code
+  quality, local builds, releases
+- [Maintaining game data](docs/game-data.md) – adding monsters, weapons and
+  languages
+- [Nix and NixOS](docs/nix.md) – flake outputs, installation on NixOS, local
+  builds
 - [Changelog](CHANGELOG.md)
 
 ## License

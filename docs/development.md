@@ -61,3 +61,21 @@ cargo clippy
 ```sh
 cargo tauri build
 ```
+
+## Releases
+
+The GitHub workflow `.github/workflows/release.yml` builds releases for Linux,
+macOS and Windows with
+[tauri-action](https://github.com/tauri-apps/tauri-action) and attaches the
+packages to a GitHub release. It runs when a `v*` tag is pushed, or manually:
+
+```sh
+git tag v0.5.1
+git push origin v0.5.1
+```
+
+> [!IMPORTANT]
+> The version is stored in `version`, `Cargo.toml` and `tauri.conf.json`; it
+> must be bumped in all three files and recorded in
+> [CHANGELOG.md](../CHANGELOG.md). The release name is derived from the Tauri
+> version.
