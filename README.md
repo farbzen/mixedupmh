@@ -13,8 +13,8 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=flat-square)](LICENSE)
 
-[Overview](#overview) • [Getting Started](#getting-started) •
-[Documentation](#documentation)
+[Overview](#overview) • [Features](#features) •
+[Getting Started](#getting-started) • [Documentation](#documentation)
 
 </div>
 
