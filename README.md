@@ -12,6 +12,7 @@ _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your 
 [![htmx](https://img.shields.io/badge/htmx-3366CC?style=for-the-badge&labelColor=081216&logo=htmx&logoColor=white)](https://htmx.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&labelColor=081216&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge&labelColor=081216)](LICENSE)
+[![Ko-Fi donate](https://img.shields.io/badge/donate-kofi?style=for-the-badge&labelColor=081216&color=ee5556&logo=ko-fi&logoColor=white)](https://ko-fi.com/farbzen)
 
 [Overview](#overview) • [Features](#features) •
 [Getting Started](#getting-started) • [Documentation](#documentation)
