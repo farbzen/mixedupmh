@@ -6,12 +6,12 @@
 
 _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your hunting party._
 
-[![Version](https://img.shields.io/badge/version-0.5.1-blue?style=for-the-badge)](CHANGELOG.md)
-[![Rust](https://img.shields.io/badge/Rust-2024-orange?style=for-the-badge&logo=rust)](https://www.rust-lang.org)
-[![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=for-the-badge&logo=tauri)](https://tauri.app)
-[![htmx](https://img.shields.io/badge/htmx-3366CC?style=for-the-badge&logo=htmx&logoColor=white)](https://htmx.org)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)](LICENSE)
+[![Version](https://img.shields.io/badge/version-0.5.1-blue?style=for-the-badge&labelColor=081216)](CHANGELOG.md)
+[![Rust](https://img.shields.io/badge/Rust-2024-orange?style=for-the-badge&labelColor=081216&logo=rust)](https://www.rust-lang.org)
+[![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=for-the-badge&labelColor=081216&logo=tauri)](https://tauri.app)
+[![htmx](https://img.shields.io/badge/htmx-3366CC?style=for-the-badge&labelColor=081216&logo=htmx&logoColor=white)](https://htmx.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-06B6D4?style=for-the-badge&labelColor=081216&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green?style=for-the-badge&labelColor=081216)](LICENSE)
 
 [Overview](#overview) • [Features](#features) •
 [Getting Started](#getting-started) • [Documentation](#documentation)
