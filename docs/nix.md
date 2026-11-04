@@ -57,7 +57,7 @@ Add the flake as an input and apply the overlay in your system flake:
 For Home Manager, use `home.packages` instead of
 `environment.systemPackages`.
 
-To pin a release, use a tag as the URL, e.g. `github:farbzen/mixedupmh/v0.5.1`.
+To pin a release, use a tag as the URL, e.g. `github:farbzen/mixedupmh/v0.6.0`.
 
 ## Build locally
 

@@ -70,8 +70,8 @@ macOS and Windows with
 packages to a GitHub release. It runs when a `v*` tag is pushed, or manually:
 
 ```sh
-git tag v0.5.1
-git push origin v0.5.1
+git tag v0.6.0
+git push origin v0.6.0
 ```
 
 > [!IMPORTANT]
