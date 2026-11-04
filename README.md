@@ -6,7 +6,7 @@
 
 _A randomizer for Monster Hunter Wilds that rolls monsters and weapons for your hunting party._
 
-[![Version](https://img.shields.io/badge/version-0.6.0-blue?style=for-the-badge&labelColor=081216)](CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-0.7.0-blue?style=for-the-badge&labelColor=081216)](CHANGELOG.md)
 [![Rust](https://img.shields.io/badge/Rust-2024-orange?style=for-the-badge&labelColor=081216&logo=rust)](https://www.rust-lang.org)
 [![Tauri](https://img.shields.io/badge/Tauri-2-24C8DB?style=for-the-badge&labelColor=081216&logo=tauri)](https://tauri.app)
 [![htmx](https://img.shields.io/badge/htmx-3366CC?style=for-the-badge&labelColor=081216&logo=htmx&logoColor=white)](https://htmx.org)

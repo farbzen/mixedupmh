@@ -8,6 +8,8 @@ and this project adheres to
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-11-04
+
 ### Changed
 
 - The reroll button is locked for one second per active player instead of a
@@ -83,7 +85,8 @@ and this project adheres to
 - First version: random selection of monster, tier and hunt objective as well
   as weapons for up to four hunters, UI in German and English.
 
-[Unreleased]: https://github.com/farbzen/mixedupmh/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/farbzen/mixedupmh/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/farbzen/mixedupmh/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/farbzen/mixedupmh/compare/v0.5.1...v0.6.0
 [0.5.1]: https://github.com/farbzen/mixedupmh/compare/v0.5.0...v0.5.1
 [0.5.0]: https://github.com/farbzen/mixedupmh/releases/tag/v0.5.0
