@@ -8,6 +8,10 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- The application icon and the favicon are now the project logo.
+
 ## [0.7.0] - 2026-11-04
 
 ### Changed
