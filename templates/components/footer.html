@@ -1,7 +1,13 @@
 <div
   class="top-full sticky flex w-full p-4 my-auto justify-center text-xs"
 >
-  <div class="w-1/6"></div>
+  <div class="w-1/6 flex items-center">
+    <a href="https://ko-fi.com/farbzen"
+       class="flex items-center gap-2 hover:text-amber-100 transition-colors">
+      <img src="/assets/images/kofi.webp" alt="Ko-fi" class="h-4 aspect-auto" />
+      {{ lang.get("support_kofi") }}
+    </a>
+  </div>
   <div class="w-2/3 flex justify-center items-center">&copy; {{ year }} {{ lang.get("copyright") }}</div>
   <div class="w-1/6 flex justify-end items-center">
     <div x-data="{ lang: '{{ lang.lang }}' }" hx-swap="outerHTML">

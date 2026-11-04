@@ -37,6 +37,17 @@ fn main() {
                 ),
             )
             .title("Mixed Up Monster Hunter")
+            .on_navigation(|url| {
+                if url.host_str() == Some("127.0.0.1") {
+                    return true;
+                }
+                if let Err(error) =
+                    tauri_plugin_opener::open_url(url.as_str(), None::<&str>)
+                {
+                    tracing::warn!("failed to open {url} externally: {error}");
+                }
+                false
+            })
             .build()?;
 
             Ok(())
