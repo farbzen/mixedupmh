@@ -4,7 +4,7 @@
         <div id="monster"
              hx-get="/_components/monster"
              hx-swap="innerHTML swap:.6s settle:.8s"
-             hx-trigger="click from:#rollAll throttle:4s">
+             hx-trigger="click from:#rollAll">
             <div class="text-lg size-96 content-end p-3 mt-6 transition-all bg-contain bg-no-repeat bg-center"
                  style='background-image: url("/assets/images/monsters/{{ temper }}_{{ monster }}.webp")'>
                 <div class="bg-linear-to-r from-black to-transparent bg-opacity-80 rounded-lg p-2">
@@ -20,7 +20,7 @@
             </div>
         </div>
     </div>
-    <div x-data="{ hunterCount: {{ hunter_count }} }">
+    <div x-data="{ hunterCount: {{ hunter_count }}, rolling: false }">
         <div class="w-full my-5 flex justify-center">
             <select class="text-slate-950 rounded-lg shadow-lg w-min p-2 px-4 mx-2"
                     x-model.number="hunterCount"
@@ -36,7 +36,9 @@
                 {% endfor %}
             </select>
             <button class="bg-slate-950 opacity-70 hover:opacity-90 active:opacity-100 rounded-xl p-2 mx-2"
-                    id="rollAll">
+                    id="rollAll"
+                    :disabled="rolling"
+                    @click="rolling = true; setTimeout(() => rolling = false, hunterCount * 1000)">
                 <img class="size-9" src="/assets/images/reload.webp" />
             </button>
         </div>
@@ -46,7 +48,7 @@
                     <div id="hunter_{{ hunter_number }}"
                          hx-get="/_components/hunter/{{ hunter_number }}"
                          hx-swap="innerHTML swap:{{ 0.6 + hunter_number as f64 * 0.6 }}s settle:.8s"
-                         hx-trigger="click from:#rollAll delay:{{ 0.1 + hunter_number as f64 * 0.1 }}s throttle:4s"
+                         hx-trigger="click from:#rollAll delay:{{ 0.1 + hunter_number as f64 * 0.1 }}s"
                          x-show="hunterCount >= {{ hunter_number }}">
                         <div class="content-end p-3 m-5 transition-all bg-contain bg-no-repeat bg-center size-60 text-lg"
                              style='background-image: url("/assets/images/weapons/{{ weapons[hunter_number - 1] }}.webp")'>

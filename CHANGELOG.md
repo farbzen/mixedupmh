@@ -8,6 +8,11 @@ and this project adheres to
 
 ## [Unreleased]
 
+### Changed
+
+- The reroll button is locked for one second per active player instead of a
+  fixed four seconds.
+
 ## [0.6.0] - 2026-11-04
 
 ### Added
