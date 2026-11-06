@@ -1,5 +1,8 @@
 __debug_bin*
 
+# Claude Code
+/.claude
+
 # Devenv
 .devenv*
 devenv.local.nix
